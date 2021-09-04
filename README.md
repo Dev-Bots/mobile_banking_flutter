@@ -1,16 +1,26 @@
-# mobile_banking
+Project Title: Mobile Banking Application with Instant Loan
 
-A new Flutter project.
+Project Description: The application is a standard mobile banking application with basic transactions. The cash end transactions will be handled through registered agents that also handle registration of new users. The application also offers instant loans on the basis of the account type. 
 
-## Getting Started
+Feature List:
 
-This project is a starting point for a Flutter application.
+Basic Bank Transactions
+- Transfer
+- Withdraw 
+- Deposit
+	
+Balance Review
 
-A few resources to get you started if this is your first Flutter project:
+Loan Management
+- Reviewing Current Loan State 
+- Acquiring Instant Loan
+- Payment of said loan through transfer 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Group Members 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    - Kevin Shitaye - ATR/9089/11
+    - Biruk Tesfaye Legesse - ETR/2913/11
+    - Meron Mesaye - ATR/7493/11
+    - Yonatan Awoke - ATR/2256/11
+    - Tinsae alemayehu - ATR/2562/11
+
