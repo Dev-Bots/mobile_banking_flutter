@@ -1,8 +1,8 @@
 import 'package:mobile_banking/domain/models/Client.dart';
 import 'package:mobile_banking/presentation/widgets/bank_name.dart';
 import 'package:mobile_banking/application/bloc/AuthBloc/auth_bloc.dart';
-import 'package:mobile_banking/insfrastructure/repository/auth/accountRepository.dart';
-import 'package:mobile_banking/insfrastructure/data_provider/auth/accountProvider.dart';
+import 'package:mobile_banking/infrastructure/repository/auth/accountRepository.dart';
+import 'package:mobile_banking/infrastructure/data_provider/auth/accountProvider.dart';
 import 'package:mobile_banking/presentation/widgets/info_card.dart';
 import 'package:mobile_banking/presentation/theme/color_const.dart';
 import 'package:flutter/material.dart';

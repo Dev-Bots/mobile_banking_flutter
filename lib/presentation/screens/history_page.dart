@@ -1,8 +1,8 @@
 // import 'dart:io';
 
 import 'package:mobile_banking/application/bloc/Historybloc/history_bloc.dart';
-import 'package:mobile_banking/insfrastructure/data_provider/transaction/transactionProvider.dart';
-import 'package:mobile_banking/insfrastructure/repository/transaction/TransactionRepository.dart';
+import 'package:mobile_banking/infrastructure/data_provider/transaction/transactionProvider.dart';
+import 'package:mobile_banking/infrastructure/repository/transaction/TransactionRepository.dart';
 import 'package:mobile_banking/presentation/theme/color_const.dart';
 
 import 'package:flutter/material.dart';

@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:mobile_banking/domain/models/models.dart';
-import 'package:mobile_banking/insfrastructure/insfrastructure.dart';
+import 'package:mobile_banking/infrastructure/infrastructure.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 

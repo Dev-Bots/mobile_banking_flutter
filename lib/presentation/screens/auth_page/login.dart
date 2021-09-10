@@ -1,7 +1,7 @@
 import 'package:mobile_banking/application/bloc/LoginBloc/login_bloc.dart';
 // import 'package:mobile_banking/application/bloc/auth_bloc/auth_bloc.dart';
-import 'package:mobile_banking/insfrastructure/data_provider/auth/accountProvider.dart';
-import 'package:mobile_banking/insfrastructure/repository/auth/accountRepository.dart';
+import 'package:mobile_banking/infrastructure/data_provider/auth/accountProvider.dart';
+import 'package:mobile_banking/infrastructure/repository/auth/accountRepository.dart';
 import 'package:mobile_banking/presentation/config/route_generator.dart';
 import 'package:mobile_banking/presentation/screens/client_pages/client_home.dart';
 import 'package:mobile_banking/presentation/screens/client_pages/client_pages_frame.dart';

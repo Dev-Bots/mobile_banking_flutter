@@ -1,4 +1,4 @@
-import 'package:mobile_banking/insfrastructure/insfrastructure.dart';
+import 'package:mobile_banking/infrastructure/infrastructure.dart';
 import 'package:mobile_banking/presentation/screens/admin_pages/admin_pages_frame.dart';
 import 'package:mobile_banking/presentation/screens/agent_pages/agent_pages_frame.dart';
 import 'package:mobile_banking/presentation/screens/auth_page/login.dart';

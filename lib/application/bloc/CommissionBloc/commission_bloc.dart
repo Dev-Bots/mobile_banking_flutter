@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:mobile_banking/insfrastructure/insfrastructure.dart';
+import 'package:mobile_banking/infrastructure/infrastructure.dart';
 
 part 'commission_event.dart';
 part 'commission_state.dart';

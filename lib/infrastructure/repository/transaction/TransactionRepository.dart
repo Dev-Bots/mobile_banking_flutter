@@ -1,6 +1,6 @@
 import 'package:mobile_banking/domain/models/models.dart';
 import 'package:mobile_banking/domain/models/TransactionHistory.dart';
-import 'package:mobile_banking/insfrastructure/data_provider/transaction/transactionProvider.dart';
+import 'package:mobile_banking/infrastructure/data_provider/transaction/transactionProvider.dart';
 
 class TransactionRepository {
   final TransactionDataProvider dataProvider;

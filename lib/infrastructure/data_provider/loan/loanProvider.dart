@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:mobile_banking/domain/models/models.dart';
-import 'package:mobile_banking/insfrastructure/data_provider/config.dart';
-import 'package:mobile_banking/insfrastructure/data_provider/getToken.dart';
+import 'package:mobile_banking/infrastructure/data_provider/config.dart';
+import 'package:mobile_banking/infrastructure/data_provider/getToken.dart';
 import 'package:http/http.dart' as http;
 
 class MyException implements Exception {

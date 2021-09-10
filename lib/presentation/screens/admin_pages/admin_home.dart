@@ -1,8 +1,8 @@
 import 'package:mobile_banking/presentation/screens/auth_page/login.dart';
 import 'package:mobile_banking/presentation/widgets/bank_name.dart';
 import 'package:mobile_banking/application/bloc/AuthBloc/auth_bloc.dart';
-import 'package:mobile_banking/insfrastructure/repository/auth/accountRepository.dart';
-import 'package:mobile_banking/insfrastructure/data_provider/auth/accountProvider.dart';
+import 'package:mobile_banking/infrastructure/repository/auth/accountRepository.dart';
+import 'package:mobile_banking/infrastructure/data_provider/auth/accountProvider.dart';
 import 'package:mobile_banking/presentation/widgets/custom_admin_widgets/admin_menu.dart';
 import 'package:mobile_banking/presentation/widgets/custom_client_widgets/client_menu.dart';
 import 'package:mobile_banking/presentation/widgets/info_card.dart';

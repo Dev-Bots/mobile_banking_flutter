@@ -6,8 +6,8 @@ import 'package:mobile_banking/presentation/config/route_generator.dart';
 // import 'application/bloc/auth_bloc/auth_bloc.dart';
 import 'application/bloc/AuthBloc/auth_bloc.dart';
 
-import 'package:mobile_banking/insfrastructure/data_provider/data_provider.dart';
-import 'package:mobile_banking/insfrastructure/repository/repository.dart';
+import 'package:mobile_banking/infrastructure/data_provider/data_provider.dart';
+import 'package:mobile_banking/infrastructure/repository/repository.dart';
 import 'package:http/http.dart' as http;
 
 WidgetsBinding ensureInitialized() {

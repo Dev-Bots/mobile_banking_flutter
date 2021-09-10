@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:mobile_banking/application/bloc/AuthBloc/auth_bloc.dart';
-import 'package:mobile_banking/insfrastructure/repository/auth/accountRepository.dart';
-import 'package:mobile_banking/insfrastructure/data_provider/auth/accountProvider.dart';
+import 'package:mobile_banking/infrastructure/repository/auth/accountRepository.dart';
+import 'package:mobile_banking/infrastructure/data_provider/auth/accountProvider.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

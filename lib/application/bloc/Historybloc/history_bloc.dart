@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:mobile_banking/domain/models/TransactionHistory.dart';
-import 'package:mobile_banking/insfrastructure/repository/auth/accountRepository.dart';
-import 'package:mobile_banking/insfrastructure/repository/transaction/TransactionRepository.dart';
+import 'package:mobile_banking/infrastructure/repository/auth/accountRepository.dart';
+import 'package:mobile_banking/infrastructure/repository/transaction/TransactionRepository.dart';
 
 part 'history_event.dart';
 part 'history_state.dart';

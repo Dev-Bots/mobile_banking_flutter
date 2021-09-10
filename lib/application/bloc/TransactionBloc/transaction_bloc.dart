@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 // import 'package:mobile_banking/application/bloc/auth_bloc/auth_bloc.dart';
-import 'package:mobile_banking/insfrastructure/insfrastructure.dart';
+import 'package:mobile_banking/infrastructure/infrastructure.dart';
 
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';

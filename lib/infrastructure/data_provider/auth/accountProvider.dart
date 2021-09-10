@@ -3,10 +3,10 @@ import 'dart:convert';
 
 import 'dart:io';
 import 'package:mobile_banking/domain/models/models.dart';
-import 'package:mobile_banking/insfrastructure/data_provider/config.dart';
+import 'package:mobile_banking/infrastructure/data_provider/config.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:mobile_banking/insfrastructure/data_provider/getToken.dart';
+import 'package:mobile_banking/infrastructure/data_provider/getToken.dart';
 
 class AccountDataProvider {
   final _baseUrl = baseURL;
