@@ -21,7 +21,7 @@ class RouteCard extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
           ),
-          elevation: 10,
+          elevation: 7,
           child: Container(
             padding: EdgeInsets.all(20),
             child: Stack(

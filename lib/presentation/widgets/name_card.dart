@@ -14,7 +14,7 @@ class NameCard extends StatelessWidget {
       height: 150,
       // width: ,
       child: Card(
-        color: Colors.lightGreen,
+        color: Colors.blue,
         // semanticContainer: true,
         // clipBehavior: Clip.antiAliasWithSaveLayer,
         child: Stack(

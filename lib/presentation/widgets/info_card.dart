@@ -15,7 +15,7 @@ class InfoCard extends StatelessWidget {
     return Container(
       height: 250,
       child: Card(
-        color: Colors.blue,
+        color: Colors.lightBlue,
         child: Stack(
           children: [
             Container(

@@ -18,9 +18,11 @@ class CommissionBloc extends Bloc<CommissionEvent, CommissionState> {
     CommissionEvent event,
   ) async* {
     if (event is RequestPayment) {
+      print('found the bloc');
       yield CommissionPayProcessing();
 
       try {
+        print("Its here!");
         var pay = await transactionRepository.agentPayment();
 
         print(pay);

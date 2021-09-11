@@ -63,7 +63,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         bottomNavigationBar: new Theme(
           data: Theme.of(context).copyWith(
               // sets the background color of the `BottomNavigationBar`
-              canvasColor: Colors.blueAccent,
+              canvasColor: Colors.lightBlue,
               // sets the active color of the `BottomNavigationBar` if `Brightness` is light
               primaryColor: Colors.red,
               textTheme: Theme.of(context).textTheme.copyWith(

@@ -22,9 +22,9 @@ class ClientMenuLayout extends StatelessWidget {
               "Transfer",
               Icon(
                 Icons.import_export,
-                color: Colors.lightGreen[800],
+                color: Colors.lightGreenAccent,
               ),
-              Colors.blue),
+              Colors.lightBlue),
           onTap: () {
             // Navigator.of(context).pushNamed('/userhome');
             Navigator.push(
@@ -35,8 +35,8 @@ class ClientMenuLayout extends StatelessWidget {
       InkWell(
           child: RouteCard(
               "Instant Loan",
-              Icon(Icons.monetization_on, color: Colors.blue[800]),
-              Colors.lightGreen),
+              Icon(Icons.monetization_on, color: Colors.lightGreenAccent),
+              Colors.lightBlue),
           onTap: () {
             // Navigator.of(context).pushNamed('/userhome');
             Navigator.push(
@@ -47,8 +47,8 @@ class ClientMenuLayout extends StatelessWidget {
       InkWell(
           child: RouteCard(
               "Rquest Withdraw",
-              Icon(Icons.money_rounded, color: Colors.lightGreen[800]),
-              Colors.blue),
+              Icon(Icons.money_rounded, color: Colors.lightGreenAccent),
+              Colors.lightBlue),
           onTap: () {
             // Navigator.of(context).pushNamed('/userhome');
             Navigator.push(
@@ -57,8 +57,10 @@ class ClientMenuLayout extends StatelessWidget {
             );
           }),
       InkWell(
-        child: RouteCard("Transactions",
-            Icon(Icons.history, color: Colors.blue[800]), Colors.lightGreen),
+        child: RouteCard(
+            "Transactions",
+            Icon(Icons.history, color: Colors.lightGreenAccent),
+            Colors.lightBlue),
         onTap: () {
           // Navigator.of(context).pushNamed('/userhome');
           Navigator.push(

@@ -19,13 +19,13 @@ class ClientBottomNavigation extends StatelessWidget {
           label: 'Manage Loan',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.bookmark),
-          label: 'Saved Accounts',
-        ),
-        BottomNavigationBarItem(
           icon: Icon(Icons.person),
           label: 'My Profile',
         ),
+        // BottomNavigationBarItem(
+        //   icon: Icon(Icons.bookmark),
+        //   label: 'Saved Accounts',
+        // ),
       ],
       elevation: 10,
       currentIndex: selectedIndex,

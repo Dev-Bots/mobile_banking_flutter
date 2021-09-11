@@ -15,14 +15,14 @@ class BankName extends StatelessWidget {
         children: [
           Icon(
             Icons.account_balance,
-            color: Colors.blue[800],
+            color: Colors.blue[700],
           ),
           SizedBox(width: 10),
           Text(
             'Dominion Bank Corporation',
             style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Colors.blue[800],
+                color: Colors.blue[700],
                 fontSize: 25),
           ),
         ],

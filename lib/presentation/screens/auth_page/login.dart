@@ -1,4 +1,5 @@
 import 'package:mobile_banking/application/bloc/LoginBloc/login_bloc.dart';
+import 'package:mobile_banking/domain/auth/inputValiadation.dart';
 // import 'package:mobile_banking/application/bloc/auth_bloc/auth_bloc.dart';
 import 'package:mobile_banking/infrastructure/data_provider/auth/accountProvider.dart';
 import 'package:mobile_banking/infrastructure/repository/auth/accountRepository.dart';
@@ -50,6 +51,7 @@ class LoginScreen extends StatelessWidget {
                           inputFieldStyle: inputFieldStyle),
                       SizedBox(height: 30.0),
                       StateCheckBloc(
+                          formKey: formKey,
                           emailTextController: emailTextController,
                           passwordTextController: passwordTextController),
                     ],
@@ -65,14 +67,16 @@ class LoginScreen extends StatelessWidget {
 }
 
 class StateCheckBloc extends StatelessWidget {
-  const StateCheckBloc({
+  StateCheckBloc({
     Key? key,
     required this.emailTextController,
     required this.passwordTextController,
+    required this.formKey,
   }) : super(key: key);
 
   final TextEditingController emailTextController;
   final TextEditingController passwordTextController;
+  final GlobalKey<FormState> formKey;
 
   @override
   Widget build(BuildContext context) {
@@ -108,6 +112,7 @@ class StateCheckBloc extends StatelessWidget {
         Widget buttonChild = Text("Login");
 
         return LoginButton(
+            formKey: formKey,
             emailTextController: emailTextController,
             passwordTextController: passwordTextController,
             buttonChild: buttonChild);
@@ -153,6 +158,7 @@ class BankImage extends StatelessWidget {
 class LoginButton extends StatelessWidget {
   const LoginButton({
     Key? key,
+    required this.formKey,
     required this.emailTextController,
     required this.passwordTextController,
     required this.buttonChild,
@@ -161,11 +167,13 @@ class LoginButton extends StatelessWidget {
   final TextEditingController emailTextController;
   final TextEditingController passwordTextController;
   final Widget buttonChild;
+  final GlobalKey<FormState> formKey;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
+        // use the information provided
         final authBloc = BlocProvider.of<LoginBloc>(context);
 
         authBloc.add(LoginButtonPressed(
@@ -177,7 +185,7 @@ class LoginButton extends StatelessWidget {
   }
 }
 
-class EmailField extends StatelessWidget {
+class EmailField extends StatelessWidget with InputValidationMixin {
   const EmailField({
     Key? key,
     required this.emailTextController,
@@ -197,7 +205,7 @@ class EmailField extends StatelessWidget {
   }
 }
 
-class PasswordField extends StatelessWidget {
+class PasswordField extends StatelessWidget with InputValidationMixin {
   const PasswordField({
     Key? key,
     required this.passwordTextController,
@@ -219,8 +227,6 @@ class PasswordField extends StatelessWidget {
     );
   }
 }
-
-
 
 // import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
@@ -247,4 +253,5 @@ class PasswordField extends StatelessWidget {
 //     return Scaffold
 //   }
 // }
+
 

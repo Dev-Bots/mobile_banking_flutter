@@ -165,7 +165,6 @@ class PasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      obscureText: true,
       controller: amountTextController,
       decoration: InputDecoration(
         icon: Icon(Icons.attach_money),
@@ -213,7 +212,7 @@ class LoanInfoCard extends StatelessWidget {
         return Container(
           height: 250,
           child: Card(
-            color: Colors.blue,
+            color: Colors.lightBlue,
             child: Stack(
               children: [
                 Container(
