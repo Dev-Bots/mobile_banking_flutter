@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:mobile_banking/domain/models/Client.dart';
+import 'package:mobile_banking/presentation/screens/admin_pages/admin_search_accounts.dart';
 import 'package:mobile_banking/presentation/widgets/bank_name.dart';
 import 'package:mobile_banking/application/bloc/AuthBloc/auth_bloc.dart';
 import 'package:mobile_banking/infrastructure/repository/auth/accountRepository.dart';
@@ -51,6 +54,11 @@ class AdminClientManageAccount extends StatelessWidget {
       if (state is ProccessFinished) {
         final snackBar = SnackBar(content: Text(state.message));
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => AdminSearchUser()),
+        );
       } else if (state is ProccessFailed) {
         print(state.error);
         final snackBar = SnackBar(content: Text(state.error));

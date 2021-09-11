@@ -1,4 +1,6 @@
 import 'package:mobile_banking/presentation/screens/agent_pages/agent_home.dart';
+
+import 'package:mobile_banking/presentation/screens/agent_pages/request_pay.dart';
 import 'package:mobile_banking/presentation/screens/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_banking/presentation/screens/saved_accounts.dart';
@@ -37,6 +39,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   //     TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
     AgentHomePage(),
+    RequestPay(),
     ProfilePage(),
     // ProfilePage(),
     // ProfilePage(),
@@ -63,7 +66,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         bottomNavigationBar: new Theme(
           data: Theme.of(context).copyWith(
               // sets the background color of the `BottomNavigationBar`
-              canvasColor: Colors.blueAccent,
+              canvasColor: Colors.lightBlue,
               // sets the active color of the `BottomNavigationBar` if `Brightness` is light
               primaryColor: Colors.red,
               textTheme: Theme.of(context).textTheme.copyWith(

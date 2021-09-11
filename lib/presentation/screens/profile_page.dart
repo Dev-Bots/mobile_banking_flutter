@@ -55,6 +55,7 @@ class ControlBloc extends StatelessWidget {
                       ProfileCard('${user.accountNumber}', '${user.email}',
                           '${user.fullName}'),
                       PasswordChangingSection(),
+                      SizedBox(height: 30),
                       LogoutButton(),
                     ],
                   ),
@@ -261,7 +262,7 @@ class ProfileCard extends StatelessWidget {
         return Container(
           height: 250,
           child: Card(
-            color: Colors.blue,
+            color: Colors.lightBlue,
             child: Stack(
               children: [
                 Container(

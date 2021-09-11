@@ -16,7 +16,7 @@ class AdminMenuLayout extends StatelessWidget {
     return Container(
         child: MenuCardLayout(
       InkWell(
-        child: RouteCard("Add Agent", Icon(Icons.ac_unit), Colors.blue),
+        child: RouteCard("Add Agent", Icon(Icons.ac_unit), Colors.lightBlue),
         onTap: () {
           Navigator.push(
             context,
@@ -26,7 +26,7 @@ class AdminMenuLayout extends StatelessWidget {
       ),
       InkWell(
         child: RouteCard(
-            "Deposit to Agent", Icon(Icons.ac_unit), Colors.lightGreen),
+            "Deposit to Agent", Icon(Icons.ac_unit), Colors.lightBlue),
         onTap: () {
           Navigator.push(
             context,
@@ -35,7 +35,7 @@ class AdminMenuLayout extends StatelessWidget {
         },
       ),
       InkWell(
-        child: RouteCard("Manage Users", Icon(Icons.ac_unit), Colors.blue),
+        child: RouteCard("Manage Users", Icon(Icons.ac_unit), Colors.lightBlue),
         onTap: () {
           Navigator.push(
             context,
@@ -44,8 +44,7 @@ class AdminMenuLayout extends StatelessWidget {
         },
       ),
       InkWell(
-        child:
-            RouteCard("Transactions", Icon(Icons.ac_unit), Colors.lightGreen),
+        child: RouteCard("Transactions", Icon(Icons.ac_unit), Colors.lightBlue),
         onTap: () {
           Navigator.push(
             context,

@@ -25,12 +25,12 @@ class AdminReport extends StatelessWidget {
       value: this.repo,
       child: BlocProvider<AuthBloc>(
         create: (context) =>
-            AuthBloc(accountRepository: this.repo)..add(GetMyAccount()),
+            AuthBloc(accountRepository: this.repo)..add(GetGeneralReport()),
         child: BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
-          if (state is AccountLoading) {
+          if (state is Proccessing) {
             return CircularProgressIndicator();
-          } else if (state is AccountLoaded) {
-            var user = state.user;
+          } else if (state is ReportLoaded) {
+            var report = state.report;
             return Scaffold(
               backgroundColor: AppColors.primaryWhite,
               body: SafeArea(
@@ -41,10 +41,14 @@ class AdminReport extends StatelessWidget {
                     child: Column(
                       children: [
                         BankName(),
-                        NameCard('${user.fullName}', '${user.role}'),
-                        InfoCard('Central Budget', 'A${user.accountNumber}',
-                            '\$${user.bankBudget}'),
-                        AdminMenuLayout(),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height / 5),
+                        ReportCard(
+                            '\$${report.totalMoneyInBank}',
+                            '\$${report.totalMoneyInLoan}',
+                            '${report.numOfAdmins}',
+                            '${report.numOfAgents}',
+                            '${report.numOfClients}'),
                       ],
                     ),
                   ),
@@ -56,6 +60,133 @@ class AdminReport extends StatelessWidget {
           }
         }),
       ),
+    );
+  }
+}
+
+class ReportCard extends StatelessWidget {
+  final String totalMoneyInBank;
+  final String totalMoneyInLoan;
+  final String numOfAdmins;
+  final String numOfAgents;
+  final String numOfClients;
+  ReportCard(
+    this.totalMoneyInBank,
+    this.totalMoneyInLoan,
+    this.numOfAdmins,
+    this.numOfAgents,
+    this.numOfClients,
+  );
+  @override
+  Widget build(BuildContext context) {
+    // var screensize = MediaQuery.of(context).size.width;
+    return Column(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          height: 350,
+          child: Card(
+            color: Colors.lightBlue,
+            child: Stack(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 10),
+                  child: Column(
+                    children: [
+                      ListTile(
+                        title: Text(
+                          'Total Budget Of Bank',
+                          style: TextStyle(
+                              color: Colors.cyanAccent,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Text(
+                          this.totalMoneyInBank.toString(),
+                          style: TextStyle(
+                              color: Colors.yellowAccent,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      ListTile(
+                        title: Text(
+                          'Total Money in Loan ',
+                          style: TextStyle(
+                              color: Colors.cyanAccent,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Text(
+                          this.totalMoneyInLoan.toString(),
+                          style: TextStyle(
+                              color: Colors.yellowAccent,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      ListTile(
+                        title: Text(
+                          'Number of Administrators ',
+                          style: TextStyle(
+                              color: Colors.cyanAccent,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Text(
+                          this.numOfAdmins.toString(),
+                          style: TextStyle(
+                              color: Colors.yellowAccent,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      ListTile(
+                        title: Text(
+                          'Number of Agents ',
+                          style: TextStyle(
+                              color: Colors.cyanAccent,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Text(
+                          this.numOfAgents.toString(),
+                          style: TextStyle(
+                              color: Colors.yellowAccent,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      ListTile(
+                        title: Text(
+                          'Number of Clients ',
+                          style: TextStyle(
+                              color: Colors.cyanAccent,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Text(
+                          this.numOfClients.toString(),
+                          style: TextStyle(
+                              color: Colors.yellowAccent,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            elevation: 10,
+            margin: EdgeInsets.fromLTRB(20, 20, 20, 20),
+          ),
+        ),
+      ],
     );
   }
 }

@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   static Color primaryWhite = Color(0xFFCADCED);
-  static Color primaryColor = Colors.blueAccent;
-
-  // static Color primaryWhite = Colors.indigo[100];
+  static Color primaryColor = Colors.lightBlue;
 
   static List pieColors = [
     Colors.indigo[400],
-    Colors.blue,
+    Colors.lightBlue,
     Colors.green,
     Colors.amber,
     Colors.deepOrange,
@@ -21,7 +19,7 @@ class AppColors {
         offset: Offset(-5, -5),
         blurRadius: 30),
     BoxShadow(
-        // color: Colors.blue[900].withOpacity(.2),
+        // color: Colors.lightBlue[900].withOpacity(.2),
         spreadRadius: 2,
         offset: Offset(7, 7),
         blurRadius: 20)

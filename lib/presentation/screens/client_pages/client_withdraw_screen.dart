@@ -37,7 +37,7 @@ class ClientWithdrawPage extends StatelessWidget {
         appBar: AppBar(
           elevation: 0,
           toolbarHeight: 50,
-          iconTheme: IconThemeData(color: Colors.blue),
+          iconTheme: IconThemeData(color: Colors.lightBlue),
           backgroundColor: Colors.white38,
         ),
         body: SafeArea(

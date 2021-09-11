@@ -1,3 +1,4 @@
+import 'package:mobile_banking/domain/auth/inputValiadation.dart';
 import 'package:mobile_banking/domain/models/models.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -107,6 +108,7 @@ class StateCheckBloc extends StatelessWidget {
     required this.emailTextController,
     required this.phoneNumberTextController,
     required this.balanceTextController,
+    // required this.formKey,
   }) : super(key: key);
 
   final TextEditingController firstNAmeTextController;
@@ -117,6 +119,7 @@ class StateCheckBloc extends StatelessWidget {
   final TextEditingController emailTextController;
   final TextEditingController phoneNumberTextController;
   final TextEditingController balanceTextController;
+  // final GlobalKey<FormState> formKey;
 
   @override
   Widget build(BuildContext context) {
@@ -271,7 +274,7 @@ class RegisterButton extends StatelessWidget {
 
 //===================Fields============================
 
-class FirstName extends StatelessWidget {
+class FirstName extends StatelessWidget with InputValidationMixin {
   const FirstName({
     Key? key,
     required this.firstNameTextController,
@@ -291,7 +294,7 @@ class FirstName extends StatelessWidget {
   }
 }
 
-class LastName extends StatelessWidget {
+class LastName extends StatelessWidget with InputValidationMixin {
   const LastName({
     Key? key,
     required this.lastNameTextController,
@@ -313,7 +316,7 @@ class LastName extends StatelessWidget {
   }
 }
 
-class DOB extends StatelessWidget {
+class DOB extends StatelessWidget with InputValidationMixin {
   const DOB({
     Key? key,
     required this.dobTextController,
@@ -335,7 +338,7 @@ class DOB extends StatelessWidget {
   }
 }
 
-class Address extends StatelessWidget {
+class Address extends StatelessWidget with InputValidationMixin {
   const Address({
     Key? key,
     required this.addressTextController,
@@ -357,7 +360,7 @@ class Address extends StatelessWidget {
   }
 }
 
-class PhoneNumber extends StatelessWidget {
+class PhoneNumber extends StatelessWidget with InputValidationMixin {
   const PhoneNumber({
     Key? key,
     required this.phoneNumberTextController,
@@ -379,7 +382,7 @@ class PhoneNumber extends StatelessWidget {
   }
 }
 
-class Email extends StatelessWidget {
+class Email extends StatelessWidget with InputValidationMixin {
   const Email({
     Key? key,
     required this.emailTextController,
@@ -401,7 +404,7 @@ class Email extends StatelessWidget {
   }
 }
 
-class Balance extends StatelessWidget {
+class Balance extends StatelessWidget with InputValidationMixin {
   const Balance({
     Key? key,
     required this.balanceTextController,

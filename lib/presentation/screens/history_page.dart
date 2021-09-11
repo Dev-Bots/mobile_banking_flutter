@@ -19,7 +19,7 @@ class HistoryPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
             elevation: 0,
-            iconTheme: IconThemeData(color: Colors.blue),
+            iconTheme: IconThemeData(color: Colors.lightBlue),
             backgroundColor: Colors.white38,
             title: Text(
               "My History",
@@ -50,16 +50,20 @@ class HistoryPage extends StatelessWidget {
                           itemCount: transactionHistorys.length,
                           itemBuilder: (context, index) {
                             return ListTile(
-                                title: Text(
-                                    '${transactionHistorys[index].relatedAccount}'),
-                                subtitle: Text(
-                                    '${transactionHistorys[index].remark} + ${transactionHistorys.length} ',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 10)),
-                                trailing: Text(
-                                  '${transactionHistorys[index].transactionType}',
-                                ));
+                              title: Text(
+                                  '${transactionHistorys[index].relatedAccount}'),
+                              subtitle: Text(
+                                  '${transactionHistorys[index].remark} + ${transactionHistorys.length} ',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10)),
+                              // trailing: Text(
+                              //   '${transactionHistorys[index].transactionType}',
+                              // )
+                              // trailing: Ele(
+                              //   '${transactionHistorys[index].transactionType}',
+                              // )
+                            );
                           },
                         );
                       }

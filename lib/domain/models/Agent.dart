@@ -93,5 +93,5 @@ class Agent extends Equatable {
       };
   @override
   String toString() =>
-      'Agent { agent_id: $agentID, account_number: $accountNumber, first_name: $firstName, last_name: $lastName, fullname: $fullName,role: $role, address: $address, DOB: $dob, is_blocked: $isBlocked, budget: $budget, registered_users:$registeredUsers, pending_commission_payment: $commission}';
+      'Agent { agent_id: $agentID, account_number: $accountNumber, first_name: $firstName, last_name: $lastName, fullname: $fullName,role: $role, address: $address, DOB: $dob, is_blocked: $isBlocked, budget: $budget,commission:$commission, registered_users:$registeredUsers, pending_commission_payment: $commission}';
 }

@@ -12,7 +12,7 @@ class RequestPayment extends CommissionEvent {
   List<Object> get props => [];
 }
 
-class GetMyAccount extends CommissionEvent {
+class GetPayment extends CommissionEvent {
   @override
   List<Object> get props => [];
 }
