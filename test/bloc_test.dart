@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mobile_banking/infrastructure/infrastructure.dart';
 import 'package:mobile_banking/infrastructure/repository/auth/auth.dart';
-
+import 'package:http/http.dart' as http;
 import 'package:mobile_banking/main.dart';
 
 void main() {}
