@@ -48,7 +48,7 @@ void main() {
   tearDown(() {});
   test("Transfer", () async {
     when(
-      repo.transfer('recieverAccountNumber', 1),
+      repo.transfer('recieverAccountNumber', 1).then((value) => isA<Future>()),
     );
 
     expect(await repo.transfer('recieverAccountNumber', 1), null);
