@@ -26,7 +26,12 @@ class AdminSearchUser extends StatelessWidget {
     return BlocProvider(
       create: (context) => AuthBloc(accountRepository: repo),
       child: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          elevation: 0,
+          toolbarHeight: 50,
+          iconTheme: IconThemeData(color: Colors.lightBlue),
+          backgroundColor: Colors.white38,
+        ),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Container(
@@ -124,7 +129,7 @@ class BankImage extends StatelessWidget {
       height: MediaQuery.of(context).size.height / 3,
 
       // decoration: BoxDecoration(color: Colors.black),
-      child: Image.asset('assets/images/transfer.jpg'),
+      child: Image.asset('assets/images/account.jpg'),
     );
   }
 }

@@ -1,5 +1,5 @@
 class InputValidationMixin {
-  bool isPasswordValid(String password) => password.length == 6;
+  bool isPasswordValid(String password) => password.length >= 6;
 
   bool isEmailValid(String email) {
     String pattern =
@@ -15,7 +15,9 @@ class InputValidationMixin {
     return regex.hasMatch(date);
   }
 
-  bool isValidMoney(double money) => money > 0;
+  bool isValidMoney(money) {
+    return money > 0;
+  }
 
   bool isValidAccount(int accountnumber) =>
       accountnumber.toString().length == 10;
@@ -54,12 +56,12 @@ class InputValidationMixin {
 // },
 
 
-//  validator: (money) {
-//   if (isValidMoney(money!))
-//     return null;
-//   else
-//     return 'Input invalid';
-// },
+// validator: (money) {
+//         if (isValidMoney(double.parse(money!)))
+//           return null;
+//         else
+//           return 'Invalid Input';
+//       },
 
 
 //  validator: (accountnumber) {

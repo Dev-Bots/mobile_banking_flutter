@@ -41,7 +41,8 @@ class AgentHomePage extends StatelessWidget {
                     child: Column(
                       children: [
                         BankName(),
-                        NameCard('${user.fullName}', '${user.role}'),
+                        NameCard('${user.fullName}'.toUpperCase(),
+                            '${user.role}'.toUpperCase()),
                         InfoCard('Corporate', '${user.accountNumber}',
                             '\$${user.budget}'),
                         AgentMenuLayout(),
@@ -59,35 +60,3 @@ class AgentHomePage extends StatelessWidget {
     );
   }
 }
-
-
-
-// class AccountNumber extends StatelessWidget {
-//   const AccountNumber({
-//     Key? key,
-//   }) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Text(
-//       "1000 000 000",
-//       style: TextStyle(
-//           color: Colors.grey[800], fontWeight: FontWeight.bold, fontSize: 15),
-//     );
-//   }
-// }
-
-// class AccountName extends StatelessWidget {
-//   const AccountName({
-//     Key? key,
-//   }) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Text(
-//       "Pauline Fischer",
-//       style: TextStyle(
-//           color: Colors.grey[800], fontWeight: FontWeight.bold, fontSize: 20),
-//     );
-//   }
-// }

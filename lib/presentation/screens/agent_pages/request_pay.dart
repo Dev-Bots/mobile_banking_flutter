@@ -59,6 +59,13 @@ class ControlBloc extends StatelessWidget {
         }
       }, builder: (context, state) {
         return Scaffold(
+          appBar: AppBar(
+            elevation: 0,
+            toolbarHeight: 50,
+            iconTheme: IconThemeData(color: Colors.lightBlue),
+            backgroundColor: Colors.white38,
+          ),
+
           // backgroundColor: AppColors.primaryWhite,
           body: SafeArea(
             child: SingleChildScrollView(
@@ -101,7 +108,7 @@ class BankImage extends StatelessWidget {
       height: MediaQuery.of(context).size.height / 3,
 
       // decoration: BoxDecoration(color: Colors.black),
-      child: Image.asset('assets/images/transfer.jpg'),
+      child: Image.asset('assets/images/pay.jpg'),
     );
   }
 }

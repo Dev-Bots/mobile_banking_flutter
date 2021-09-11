@@ -41,7 +41,8 @@ class AdminHomePage extends StatelessWidget {
                     child: Column(
                       children: [
                         BankName(),
-                        NameCard('${user.fullName}', '${user.role}'),
+                        NameCard('${user.fullName}'.toUpperCase(),
+                            '${user.role}'.toUpperCase()),
                         InfoCard('Central Budget', 'A${user.accountNumber}',
                             '\$${user.bankBudget}'),
                         AdminMenuLayout(),

@@ -43,6 +43,12 @@ class ControlBloc extends StatelessWidget {
           var user = state.user;
 
           return Scaffold(
+            appBar: AppBar(
+              elevation: 0,
+              toolbarHeight: 50,
+              iconTheme: IconThemeData(color: Colors.lightBlue),
+              backgroundColor: Colors.white38,
+            ),
             // backgroundColor: AppColors.primaryWhite,
             body: SafeArea(
               child: SingleChildScrollView(
@@ -55,7 +61,7 @@ class ControlBloc extends StatelessWidget {
                       ProfileCard('${user.accountNumber}', '${user.email}',
                           '${user.fullName}'),
                       PasswordChangingSection(),
-                      SizedBox(height: 30),
+                      SizedBox(height: 20),
                       LogoutButton(),
                     ],
                   ),
@@ -112,55 +118,6 @@ class PasswordChangingSection extends StatelessWidget {
   }
 }
 
-// class StateCheckBloc extends StatelessWidget {
-//   const StateCheckBloc({
-//     Key? key,
-//     required this.amountTextController,
-//     required this.accountTextController,
-//   }) : super(key: key);
-
-//   final TextEditingController accountTextController;
-//   final TextEditingController amountTextController;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     // BlocProvider.of<AuthBloc>(context).state;
-
-//     return BlocProvider(
-//       create: (context) => AuthBloc(),
-//       child: BlocConsumer<AuthBloc, AuthState>(
-//           listener: (context, authState) {
-//             if (AuthState is AccountLoading) {
-//               // final snackBar = SnackBar(content: Text("Login in progress"));
-
-//               CircularProgressIndicator();
-//             }
-
-//             if (authState is AccountLoaded) {
-//                 var user = state.user;
-//             }
-
-//             if (transactionState is ClientTransferFailure) {
-//               // buttonChild = Text(authState.errorMsg);
-
-//               final snackBar = SnackBar(content: Text(transactionState.error));
-
-//               ScaffoldMessenger.of(context).showSnackBar(snackBar);
-//             }
-//           },
-//           builder: (ctx, authState) {
-//             Widget buttonChild = Text("Transfer");
-
-//             return TransferButton(
-//                 amountTextController: amountTextController,
-//                 accountTextController: accountTextController,
-//                 buttonChild: buttonChild);
-//           },
-//         ),
-//     );
-//   }
-// }
-
 class BankImage extends StatelessWidget {
   const BankImage({
     Key? key,
@@ -170,10 +127,10 @@ class BankImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 400,
-      height: MediaQuery.of(context).size.height / 3,
+      height: MediaQuery.of(context).size.height / 3.5,
 
       // decoration: BoxDecoration(color: Colors.black),
-      child: Image.asset('assets/images/transfer.jpg'),
+      child: Image.asset('assets/images/account.jpg'),
     );
   }
 }

@@ -41,8 +41,9 @@ class ClientHomePage extends StatelessWidget {
                         child: Column(
                           children: [
                             BankName(),
-                            NameCard('${user.fullName}', '${user.role}'),
-                            InfoCard('${user.accountType}',
+                            NameCard('${user.fullName}'.toUpperCase(),
+                                '${user.role}'.toUpperCase()),
+                            InfoCard('${user.accountType}'.toUpperCase(),
                                 '${user.accountNumber}', '\$${user.balance}'),
                             ClientMenuLayout(),
                           ],

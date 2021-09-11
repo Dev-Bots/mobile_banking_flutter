@@ -1,10 +1,10 @@
-import 'package:mobile_banking/domain/auth/inputValiadation.dart';
-import 'package:mobile_banking/domain/models/models.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
-import 'package:mobile_banking/application/bloc/AuthBloc/auth_bloc.dart';
 
+import 'package:mobile_banking/application/bloc/AuthBloc/auth_bloc.dart';
+import 'package:mobile_banking/domain/auth/inputValiadation.dart';
+import 'package:mobile_banking/domain/models/models.dart';
 import 'package:mobile_banking/infrastructure/data_provider/auth/accountProvider.dart';
 import 'package:mobile_banking/infrastructure/repository/auth/accountRepository.dart';
 import 'package:mobile_banking/presentation/config/route_generator.dart';
@@ -39,7 +39,12 @@ class ClientRegister extends StatelessWidget {
     return BlocProvider<AuthBloc>(
       create: (context) => AuthBloc(accountRepository: repo),
       child: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          elevation: 0,
+          toolbarHeight: 50,
+          iconTheme: IconThemeData(color: Colors.lightBlue),
+          backgroundColor: Colors.white38,
+        ),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Container(
@@ -84,6 +89,7 @@ class ClientRegister extends StatelessWidget {
                         emailTextController: emailTextController,
                         phoneNumberTextController: phoneNumberTextController,
                         balanceTextController: balanceTextController,
+                        formKey: formKey,
                       ),
                     ],
                   ),
@@ -108,7 +114,7 @@ class StateCheckBloc extends StatelessWidget {
     required this.emailTextController,
     required this.phoneNumberTextController,
     required this.balanceTextController,
-    // required this.formKey,
+    required this.formKey,
   }) : super(key: key);
 
   final TextEditingController firstNAmeTextController;
@@ -119,7 +125,7 @@ class StateCheckBloc extends StatelessWidget {
   final TextEditingController emailTextController;
   final TextEditingController phoneNumberTextController;
   final TextEditingController balanceTextController;
-  // final GlobalKey<FormState> formKey;
+  final GlobalKey<FormState> formKey;
 
   @override
   Widget build(BuildContext context) {
@@ -183,6 +189,7 @@ class StateCheckBloc extends StatelessWidget {
             emailTextController: emailTextController,
             phoneNumberTextController: phoneNumberTextController,
             balanceTextController: balanceTextController,
+            formKey: formKey,
           );
         },
       ),
@@ -198,7 +205,12 @@ class OTP extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        elevation: 0,
+        toolbarHeight: 50,
+        iconTheme: IconThemeData(color: Colors.lightBlue),
+        backgroundColor: Colors.white38,
+      ),
       body: Container(
         margin: EdgeInsets.all(20),
         child: Center(
@@ -241,6 +253,7 @@ class RegisterButton extends StatelessWidget {
     required this.emailTextController,
     required this.phoneNumberTextController,
     required this.balanceTextController,
+    required this.formKey,
   }) : super(key: key);
 
   final TextEditingController firstNAmeTextController;
@@ -251,21 +264,24 @@ class RegisterButton extends StatelessWidget {
   final TextEditingController emailTextController;
   final TextEditingController phoneNumberTextController;
   final TextEditingController balanceTextController;
+  final GlobalKey<FormState> formKey;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        final authBloc = BlocProvider.of<AuthBloc>(context);
-        Client client = Client(
-            firstName: firstNAmeTextController.text,
-            lastName: lastNameTextController.text,
-            dob: dobTextController.text,
-            email: emailTextController.text,
-            phoneNumber: phoneNumberTextController.text,
-            address: addressTextController.text,
-            balance: double.parse(balanceTextController.text));
-        authBloc.add(RegisterClient(client: client));
+        if (formKey.currentState!.validate()) {
+          final authBloc = BlocProvider.of<AuthBloc>(context);
+          Client client = Client(
+              firstName: firstNAmeTextController.text,
+              lastName: lastNameTextController.text,
+              dob: dobTextController.text,
+              email: emailTextController.text,
+              phoneNumber: phoneNumberTextController.text,
+              address: addressTextController.text,
+              balance: double.parse(balanceTextController.text));
+          authBloc.add(RegisterClient(client: client));
+        }
       },
       child: Text("Register"),
     );
@@ -286,6 +302,12 @@ class FirstName extends StatelessWidget with InputValidationMixin {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: firstNameTextController,
+      validator: (name) {
+        if (isValidName(name!))
+          return null;
+        else
+          return 'Invalid Input';
+      },
       decoration: InputDecoration(
         icon: Icon(Icons.person_outlined),
         hintText: "First Name",
@@ -308,6 +330,12 @@ class LastName extends StatelessWidget with InputValidationMixin {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: lastNameTextController,
+      validator: (name) {
+        if (isValidName(name!))
+          return null;
+        else
+          return 'Invalid Input';
+      },
       decoration: InputDecoration(
         icon: Icon(Icons.person_outlined),
         hintText: "Last Name",
@@ -330,6 +358,12 @@ class DOB extends StatelessWidget with InputValidationMixin {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: dobTextController,
+      validator: (date) {
+        if (isDateValid(date!))
+          return null;
+        else
+          return 'Invalid Input';
+      },
       decoration: InputDecoration(
         icon: Icon(Icons.date_range),
         hintText: "Date of Birth",
@@ -374,6 +408,12 @@ class PhoneNumber extends StatelessWidget with InputValidationMixin {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: phoneNumberTextController,
+      validator: (phoneNumber) {
+        if (isValidName(phoneNumber!))
+          return null;
+        else
+          return 'Invalid Phone Number';
+      },
       decoration: InputDecoration(
         icon: Icon(Icons.phone),
         hintText: "Phone Number",
@@ -396,6 +436,12 @@ class Email extends StatelessWidget with InputValidationMixin {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: emailTextController,
+      validator: (email) {
+        if (isEmailValid(email!))
+          return null;
+        else
+          return 'Invalid Input';
+      },
       decoration: InputDecoration(
         icon: Icon(Icons.email),
         hintText: "Email",
@@ -418,6 +464,12 @@ class Balance extends StatelessWidget with InputValidationMixin {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: balanceTextController,
+      validator: (money) {
+        if (isValidMoney(money))
+          return null;
+        else
+          return 'Invalid Input';
+      },
       decoration: InputDecoration(
         icon: Icon(Icons.attach_money),
         hintText: "Initial Deposit",

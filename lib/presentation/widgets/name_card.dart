@@ -45,7 +45,9 @@ class NameCard extends StatelessWidget {
                 subtitle: Text(
                   this.role,
                   style: TextStyle(
-                      color: Colors.yellowAccent, fontWeight: FontWeight.bold),
+                    color: Colors.yellowAccent,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),

@@ -15,13 +15,14 @@ class AgentBottomNavigation extends StatelessWidget {
           label: 'Dashboard',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.money_sharp),
-          label: 'Request Payment',
-        ),
-        BottomNavigationBarItem(
           icon: Icon(Icons.person),
           label: 'Profile',
         ),
+        // BottomNavigationBarItem(
+        //   icon: Icon(Icons.money_sharp),
+        //   label: 'Request Payment',
+        // ),
+
         // BottomNavigationBarItem(
         //   icon: Icon(Icons.settings),
         //   label: 'Settings',

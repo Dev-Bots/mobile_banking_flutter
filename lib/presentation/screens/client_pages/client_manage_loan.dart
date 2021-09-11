@@ -127,7 +127,7 @@ class BankImage extends StatelessWidget {
       height: MediaQuery.of(context).size.height / 3,
 
       // decoration: BoxDecoration(color: Colors.black),
-      child: Image.asset('assets/images/transfer.jpg'),
+      child: Image.asset('assets/images/loan.jpg'),
     );
   }
 }

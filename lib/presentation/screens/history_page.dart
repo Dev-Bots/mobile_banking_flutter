@@ -23,7 +23,7 @@ class HistoryPage extends StatelessWidget {
             backgroundColor: Colors.white38,
             title: Text(
               "My History",
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: Colors.blue[900]),
             )),
         body: BlocProvider(
           create: (context) =>
@@ -51,19 +51,22 @@ class HistoryPage extends StatelessWidget {
                           itemBuilder: (context, index) {
                             return ListTile(
                               title: Text(
-                                  '${transactionHistorys[index].relatedAccount}'),
+                                  '${transactionHistorys[index].relatedAccount}',
+                                  style: TextStyle(color: Colors.blue[900])),
                               subtitle: Text(
-                                  '${transactionHistorys[index].remark} + ${transactionHistorys.length} ',
+                                  '${transactionHistorys[index].remark} ',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 10)),
-                              // trailing: Text(
-                              //   '${transactionHistorys[index].transactionType}',
-                              // )
-                              // trailing: Ele(
-                              //   '${transactionHistorys[index].transactionType}',
-                              // )
+                                      fontSize: 10,
+                                      color: Colors.lightBlue)),
+                              trailing: Text(
+                                  '${transactionHistorys[index].transactionType}'
+                                      .toUpperCase(),
+                                  style: TextStyle(color: Colors.green)),
                             );
+                            // trailing: Ele(
+                            //   '${transactionHistorys[index].transactionType}',
+                            // )
                           },
                         );
                       }

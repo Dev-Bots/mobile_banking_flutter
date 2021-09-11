@@ -32,17 +32,23 @@ class AdminReport extends StatelessWidget {
           } else if (state is ReportLoaded) {
             var report = state.report;
             return Scaffold(
-              backgroundColor: AppColors.primaryWhite,
+              appBar: AppBar(
+                elevation: 0,
+                toolbarHeight: 50,
+                iconTheme: IconThemeData(color: Colors.white),
+                backgroundColor: Colors.white38,
+              ),
               body: SafeArea(
                 child: SingleChildScrollView(
                   child: Container(
                     //Top Container
-                    color: AppColors.primaryWhite,
+                    // color: AppColors.primaryWhite,
                     child: Column(
                       children: [
-                        BankName(),
-                        SizedBox(
-                            height: MediaQuery.of(context).size.height / 5),
+                        // BankName(),
+                        // SizedBox(
+                        //     height: MediaQuery.of(context).size.height / 5),
+                        BankImage(),
                         ReportCard(
                             '\$${report.totalMoneyInBank}',
                             '\$${report.totalMoneyInLoan}',
@@ -187,6 +193,22 @@ class ReportCard extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class BankImage extends StatelessWidget {
+  const BankImage({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 400,
+      height: MediaQuery.of(context).size.height / 3,
+      // decoration: BoxDecoration(color: Colors.black),
+      child: Image.asset('assets/images/report.jpg'),
     );
   }
 }
