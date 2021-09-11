@@ -9,24 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mobile_banking/infrastructure/infrastructure.dart';
 import 'package:mobile_banking/infrastructure/repository/auth/auth.dart';
-
+import 'package:http/http.dart' as http;
 import 'package:mobile_banking/main.dart';
 
-void main() {
-  test("Password validation", () {
-    var f = InputValidationMixin();
-    bool actual = f.isPasswordValid("1234");
-    expect(actual, false);
-  });
-}
-
-class InputValidationMixin {
-  bool isPasswordValid(String password) => password.length == 6;
-
-  bool isEmailValid(String email) {
-    String pattern =
-        r'^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-    RegExp regex = new RegExp(pattern);
-    return regex.hasMatch(email);
-  }
-}
+void main() {}
