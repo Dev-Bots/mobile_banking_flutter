@@ -33,10 +33,17 @@ import 'fetch_to_account_model_test.mocks.dart';
 //   });
 // }
 
+// mock testing is not correct, in progress
+
 class MockTransaction extends Mock implements TransactionDataProvider {
   @override
-  Future transfer(String recieverAccountNumber, double amount) {
-    return Future.value();
+  Future<String> transfer(String recieverAccountNumber, double amount) async {
+    var message = await Future.value();
+    if (message == null) {
+      return "Failed";
+    } else {
+      return "Success";
+    }
   }
 }
 
@@ -48,9 +55,11 @@ void main() {
   tearDown(() {});
   test("Transfer", () async {
     when(
-      repo.transfer('recieverAccountNumber', 1).then((value) => isA<Future>()),
+      repo
+          .transfer('recieverAccountNumber', 1)
+          .then((value) => value is Client),
     );
 
-    expect(await repo.transfer('recieverAccountNumber', 1), null);
+    expect(await repo.transfer('recieverAccountNumber', 1), "Failed");
   });
 }
